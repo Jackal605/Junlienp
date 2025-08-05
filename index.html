@@ -4,86 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="main-header">
-    <h1>JUNLIE N. PILLAZO</h1>
-    <p>BIT Major in Computer Technology | Web Development Enthusiast</p>
-  </header>
-
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home Section -->
-  <section id="home">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hello! I'm JUNLIE N. PILLAZO, a beginner in web development.Currently a Third year 
-        student studying BIT Major in Computer Technogy in Talisay City College</p>
-    <img src="profile.jpg" alt="My Profile Picture" width="200" />
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I enjoy learning how to build websites. This is my first HTML project!</p>
-    <p>Here are a few things about me:</p>
-    <ul>
-      <li>I love coding (sometimes)</li>
-      <li>I enjoy gaming and reading(a lot)</li>
-      <li>I'm interested in web design(abi nako sayun :D)</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-      <div class="project-card">
-        <h3>Simple Calculator</h3>
-        <p>A basic calculator app <span class="coming-soon">(coming soon!)</span></p>
-      </div>
-      <div class="project-card">
-        <h3>Blog Page</h3>
-        <p>A personal blog page layout</p>
-      </div>
-      <div class="project-card">
-        <h3>To-Do List</h3>
-        <p>My first interactive list <span class="coming-soon">(coming later with JavaScript)</span></p>
-      </div>
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="logo-letter">J</span>
+      <span class="logo-name">Junlie</span>
+      <span class="logo-role">Web Developer</span>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" /><br /><br />
-
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" /><br /><br />
-
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="message" rows="4" cols="30"></textarea><br /><br />
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Junlie PIllazo. All rights reserved.</p>
-  </footer>
-
+    <nav class="sidebar-nav-btns">
+      <button onclick="location.href='#home'">Home</button>
+      <button onclick="location.href='#about'">About</button>
+      <button onclick="location.href='#projects'">Projects</button>
+      <button onclick="location.href='#contact'">Contact</button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" title="LinkedIn"><img src="linkedin.png" alt="LinkedIn" /></a>
+      <a href="#" title="GitHub"><img src="github.png" alt="GitHub" /></a>
+    </div>
+  </aside>
+  <main class="content">
+    <section id="home" class="hero section-card">
+      <h1>Hi,<br>I'm <span class="accent">Junlie</span>,<br><span class="accent">web developer</span></h1>
+      <p class="subtitle">BIT Major in Computer Technology / Web Development Enthusiast</p>
+      <a href="#contact" class="btn-accent">Contact me!</a>
+    </section>
+    <section id="about" class="section-card">
+      <h2>About Me</h2>
+      <p>I enjoy learning how to build websites. This is my first HTML project!</p>
+      <ul class="about-list">
+        <li>I love coding (specifically vibe coding)</li>
+        <li>I enjoy gaming and reading (i play MMORPG Games a lot)</li>
+        <li>I'm interested in web design (building fully Dynamic Websites is challenging for me )</li>
+      </ul>
+    </section>
+    <section id="projects" class="section-card">
+      <h2>My Projects</h2>
+      <div class="project-cards">
+        <div class="project-card">
+          <h3>Simple Calculator</h3>
+          <p>A basic calculator app <span class="coming-soon">(now available!)</span></p>
+          <div class="project-status">
+            <a href="calculator.html" target="_blank" class="visit-link">Try Calculator</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Blog Page</h3>
+          <p>A personal blog page layout</p>
+          <div class="project-status">
+            <span class="in-progress">In Progress</span>
+            <br>
+            <a href="https://jackal605.github.io/blog-page-/" target="_blank" class="visit-link">Visit Blog Page</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>To-Do List</h3>
+          <p>My first interactive list <span class="coming-soon">(coming later with JavaScript)</span></p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section-card">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <button type="submit" class="btn-accent">Send</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; 2025 Junlie Pillazo. All rights reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
 
