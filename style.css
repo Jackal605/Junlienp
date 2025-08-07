@@ -11,6 +11,7 @@ body {
   color: #fff;
   font-family: 'Segoe UI', Arial, sans-serif;
   display: flex;
+  overflow-x: hidden;
 }
 
 /* Navigation */
@@ -230,11 +231,21 @@ nav ul li a:hover {
   transition: background 0.2s, color 0.2s;
   text-decoration: none;
   display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,230,230,0.10);
+  outline: none;
 }
 
 .btn-accent:hover {
   background: #00e6e6;
   color: #181818;
+}
+
+.btn-accent:focus {
+  box-shadow: 0 0 0 2px #00e6e6;
+}
+.btn-accent:active {
+  background: #ff0066;
+  color: #fff;
 }
 
 .about-list {
@@ -273,10 +284,13 @@ form input, form textarea {
   background: #181818;
   color: #fff;
   font-size: 1rem;
+  min-height: 44px;
+  transition: box-shadow 0.2s;
 }
 
 form input:focus, form textarea:focus {
   outline: 2px solid #00e6e6;
+  box-shadow: 0 0 0 2px #00e6e6;
 }
 
 /* Project Cards */
@@ -292,14 +306,14 @@ form input:focus, form textarea:focus {
   box-shadow: 0 2px 8px rgba(0,0,0,0.13);
   padding: 24px 18px;
   width: 260px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s, background 0.2s;
   text-align: center;
   color: #fff;
 }
 
-.project-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,230,230,0.13);
+.project-card:focus-within, .project-card:hover {
+  box-shadow: 0 8px 32px rgba(0,230,230,0.18);
+  background: #232323;
 }
 
 .project-card h3 {
@@ -368,6 +382,61 @@ footer {
   background: #00e6e6;
   border-radius: 2px;
   transition: 0.3s;
+}
+
+/* --- Polish and finalize for mobile and desktop --- */
+.section-card {
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.section-card:hover {
+  box-shadow: 0 4px 24px rgba(0,230,230,0.10);
+  background: #232323;
+}
+
+.hero {
+  border-left: 6px solid #00e6e6;
+  padding-left: 18px;
+  background: linear-gradient(90deg, #181818 80%, #232323 100%);
+}
+
+.project-card {
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.project-card:focus-within, .project-card:hover {
+  box-shadow: 0 8px 32px rgba(0,230,230,0.18);
+  background: #232323;
+}
+
+.sidebar, .sidebar-nav-btns, .sidebar-nav-btns button {
+  transition: all 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+form input, form textarea {
+  min-height: 44px;
+  transition: box-shadow 0.2s;
+}
+form input:focus, form textarea:focus {
+  box-shadow: 0 0 0 2px #00e6e6;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    margin-bottom: 8px;
+  }
+  .content {
+    margin-top: 8px;
+  }
+  .section-card {
+    margin-bottom: 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  }
+  .hero {
+    border-left: 3px solid #00e6e6;
+    padding-left: 8px;
+  }
+  .project-card {
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -508,4 +577,71 @@ footer {
   font-weight: bold;
   font-size: 1rem;
   letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .sidebar {
+    width: 100vw;
+    min-width: 0;
+    padding: 8px 0 0 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .logo-letter {
+    font-size: 2.2rem;
+  }
+  .logo-name {
+    font-size: 1rem;
+  }
+  .logo-role {
+    font-size: 0.8rem;
+  }
+  .sidebar-nav-btns button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .content {
+    padding: 8px 4px 0 4px;
+    margin-left: 0;
+  }
+  .section-card {
+    padding: 10px 4px;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .about-list {
+    font-size: 0.95rem;
+    margin-left: 10px;
+  }
+  .project-cards {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 4px;
+    font-size: 0.98rem;
+  }
+  form input, form textarea {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+  .btn-accent {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+  footer {
+    font-size: 0.9rem;
+    margin-top: 18px;
+  }
 }

@@ -6,77 +6,167 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     .calculator-container {
-      max-width: 320px;
+      max-width: 340px;
       margin: 60px auto;
       background: #222;
       padding: 32px 24px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
       color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .calculator-avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .calculator-avatar img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid #00e6e6;
+      box-shadow: 0 2px 8px #181818;
+      object-fit: cover;
+    }
+    .calculator-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #00e6e6;
+      margin-top: 8px;
+      text-align: center;
     }
     .calculator-display {
       width: 100%;
-      height: 48px;
-      font-size: 1.5rem;
-      margin-bottom: 16px;
+      height: 52px;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
       text-align: right;
-      padding: 8px;
-      border-radius: 6px;
+      padding: 10px;
+      border-radius: 8px;
       border: none;
       background: #181818;
       color: #00e6e6;
+      box-shadow: 0 1px 4px rgba(0,230,230,0.07);
+      letter-spacing: 1px;
+      outline: none;
+      transition: box-shadow 0.2s;
     }
     .calculator-buttons {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
     .calculator-buttons button {
-      padding: 16px 0;
-      font-size: 1.1rem;
+      padding: 18px 0;
+      font-size: 1.15rem;
       background: #333;
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+      box-shadow: 0 1px 4px rgba(0,230,230,0.07);
+      outline: none;
+      touch-action: manipulation;
+    }
+    .calculator-buttons button:active {
+      background: #ff0066;
+      color: #fff;
+      transform: scale(0.97);
+    }
+    .calculator-buttons button:focus {
+      box-shadow: 0 0 0 2px #00e6e6;
     }
     .calculator-buttons button:hover {
       background: #00e6e6;
       color: #181818;
+    }
+    .calculator-buttons .equals-btn {
+      grid-column: span 4;
+      background: #00e6e6;
+      color: #181818;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,230,230,0.13);
+    }
+    .calculator-footer {
+      text-align: center;
+      margin-top: 18px;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 500px) {
+      .calculator-container {
+        max-width: 98vw;
+        margin: 24px auto;
+        padding: 14px 4px;
+        border-radius: 10px;
+      }
+      .calculator-avatar img {
+        width: 48px;
+        height: 48px;
+      }
+      .calculator-title {
+        font-size: 1rem;
+      }
+      .calculator-display {
+        font-size: 1.1rem;
+        height: 38px;
+        padding: 6px;
+      }
+      .calculator-buttons {
+        gap: 8px;
+      }
+      .calculator-buttons button {
+        padding: 12px 0;
+        font-size: 1rem;
+      }
+      .calculator-buttons .equals-btn {
+        font-size: 1.05rem;
+      }
+      .calculator-footer {
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+    }
+    body {
+      background: #181818;
+      overflow-x: hidden;
     }
   </style>
 </head>
 <body>
   <div class="calculator-container">
     <!-- Avatar and name -->
-    <div style="text-align:center; margin-bottom:18px;">
-      <img src="avatar.png" alt="Junlie Avatar" style="width:64px; height:64px; border-radius:50%; border:2px solid #00e6e6; box-shadow:0 2px 8px #181818;">
-      <div style="font-size:1.15rem; font-weight:bold; color:#00e6e6; margin-top:8px;">Junlie's Calculator</div>
+    <div class="calculator-avatar">
+      <img src="avatar.png" alt="Junlie Avatar" aria-label="Avatar" />
+      <div class="calculator-title">Junlie's Calculator</div>
     </div>
-    <input type="text" id="display" class="calculator-display" disabled />
+    <input type="text" id="display" class="calculator-display" disabled aria-label="Calculator display" />
     <div class="calculator-buttons">
-      <button onclick="append('7')">7</button>
-      <button onclick="append('8')">8</button>
-      <button onclick="append('9')">9</button>
-      <button onclick="append('/')">÷</button>
-      <button onclick="append('4')">4</button>
-      <button onclick="append('5')">5</button>
-      <button onclick="append('6')">6</button>
-      <button onclick="append('*')">×</button>
-      <button onclick="append('1')">1</button>
-      <button onclick="append('2')">2</button>
-      <button onclick="append('3')">3</button>
-      <button onclick="append('-')">−</button>
-      <button onclick="append('0')">0</button>
-      <button onclick="append('.')">.</button>
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="append('+')">+</button>
-      <button onclick="calculate()" style="grid-column: span 4; background:#00e6e6; color:#181818;">=</button>
+      <button onclick="append('7')" aria-label="7">7</button>
+      <button onclick="append('8')" aria-label="8">8</button>
+      <button onclick="append('9')" aria-label="9">9</button>
+      <button onclick="append('/')" aria-label="Divide">÷</button>
+      <button onclick="append('4')" aria-label="4">4</button>
+      <button onclick="append('5')" aria-label="5">5</button>
+      <button onclick="append('6')" aria-label="6">6</button>
+      <button onclick="append('*')" aria-label="Multiply">×</button>
+      <button onclick="append('1')" aria-label="1">1</button>
+      <button onclick="append('2')" aria-label="2">2</button>
+      <button onclick="append('3')" aria-label="3">3</button>
+      <button onclick="append('-')" aria-label="Subtract">−</button>
+      <button onclick="append('0')" aria-label="0">0</button>
+      <button onclick="append('.')" aria-label="Decimal">.</button>
+      <button onclick="clearDisplay()" aria-label="Clear">C</button>
+      <button onclick="append('+')" aria-label="Add">+</button>
+      <button onclick="calculate()" class="equals-btn" aria-label="Equals">=</button>
     </div>
-    <div style="text-align:center; margin-top:18px; color:#aaa; font-size:0.95rem;">
-      &copy; 2025 Junlie Pillazo
-    </div>
+    <div class="calculator-footer">&copy; 2025 Junlie Pillazo</div>
   </div>
   <script>
     const display = document.getElementById('display');
