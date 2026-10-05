@@ -1,96 +1,877 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="Junlie Pillazo - Web Developer & BIT Computer Technology Student. Showcasing GitHub projects, web applications, certifications, and technical skills." />
+  <meta name="keywords"
+    content="Junlie Pillazo, Web Developer, Portfolio, PHP, JavaScript, GitHub Projects, Certifications, Computer Technology" />
+  <meta name="author" content="Junlie Pillazo" />
+  <title>Junlie Pillazo | Web Developer Portfolio</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans for headings, Inter for body, JetBrains Mono for code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Hamburger menu toggle for mobile
-    function toggleSidebarNav() {
-      const nav = document.querySelector('.sidebar-nav-btns');
-      nav.classList.toggle('show');
-    }
-  </script>
 </head>
+
 <body>
-  <aside class="sidebar">
-    <div class="logo">
-      <span class="logo-letter">J</span>
-      <span class="logo-name">Junlie</span>
-      <span class="logo-role">Web Developer</span>
-    </div>
-    <button class="hamburger" aria-label="Open navigation" onclick="toggleSidebarNav()">
-      <span></span><span></span><span></span>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Mobile Top Navigation Bar -->
+  <header class="mobile-nav-bar" id="mobile-header">
+    <a href="#home" class="mobile-brand" aria-label="Junlie Pillazo Home">
+      <span class="brand-badge">J</span>
+      <div class="brand-text">
+        <span class="brand-title">Junlie Pillazo</span>
+        <span class="brand-subtitle">Web Developer</span>
+      </div>
+    </a>
+    <button class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+      aria-controls="mobile-menu-drawer">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
     </button>
-    <nav class="sidebar-nav-btns">
-      <button onclick="location.href='#home'">Home</button>
-      <button onclick="location.href='#about'">About</button>
-      <button onclick="location.href='#projects'">Projects</button>
-      <button onclick="location.href='#contact'">Contact</button>
+  </header>
+
+  <!-- Mobile Menu Backdrop & Drawer -->
+  <div class="mobile-menu-backdrop" id="menu-backdrop"></div>
+  <nav class="mobile-menu-drawer" id="mobile-menu-drawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="drawer-user">
+        <img src="profile.jpg" alt="Junlie Pillazo" class="drawer-avatar" />
+        <div>
+          <span class="drawer-name">Junlie Pillazo</span>
+          <span class="drawer-status"><span class="status-dot"></span> Available for projects</span>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <ul class="drawer-nav-links">
+      <li><a href="#home" class="nav-link active"><span class="nav-icon">🏠</span> Home</a></li>
+      <li><a href="#about" class="nav-link"><span class="nav-icon">👤</span> About Me</a></li>
+      <li><a href="#certifications" class="nav-link"><span class="nav-icon">📜</span> Certifications</a></li>
+      <li><a href="#projects" class="nav-link"><span class="nav-icon">🚀</span> GitHub Projects</a></li>
+      <li><a href="#contact" class="nav-link"><span class="nav-icon">📬</span> Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="social-links">
+        <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub Profile">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/jundev5672" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Desktop Fixed Sidebar -->
+  <aside class="sidebar" id="desktop-sidebar">
+    <div class="sidebar-branding">
+      <div class="avatar-ring">
+        <img src="profile.jpg" alt="Junlie Pillazo profile photo" class="sidebar-avatar-img" />
+        <span class="status-indicator-badge" title="Active & Open for projects"></span>
+      </div>
+      <h1 class="sidebar-name">Junlie Pillazo</h1>
+      <p class="sidebar-role">Web Developer</p>
+      <div class="badge-status-pill">
+        <span class="pulse-dot"></span> Open to Collaborations
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Desktop Navigation">
+      <ul class="nav-list">
+        <li>
+          <a href="#home" class="nav-item active" data-section="home">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="nav-item" data-section="about">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>About Me</span>
+          </a>
+        </li>
+        <li>
+          <a href="#certifications" class="nav-item" data-section="certifications">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <span>Certifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-item" data-section="projects">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            <span>GitHub Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-item" data-section="contact">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Contact Me</span>
+          </a>
+        </li>
+      </ul>
     </nav>
-    <div class="sidebar-footer">
-      <a href="#" title="LinkedIn"><img src="linkedin.png" alt="LinkedIn" /></a>
-      <a href="#" title="GitHub"><img src="github.png" alt="GitHub" /></a>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jundev5672" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="#contact" class="social-icon-btn" aria-label="Send direct message" title="Email / Message">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+      </div>
+      <p class="sidebar-copyright">&copy; 2026 Junlie Pillazo</p>
     </div>
   </aside>
-  <main class="content">
-    <section id="home" class="hero section-card">
-      <h1>Hi,<br>I'm <span class="accent">Junlie</span>,<br><span class="accent">web developer</span></h1>
-      <p class="subtitle">BIT Major in Computer Technology / Web Development Enthusiast</p>
-      <a href="#contact" class="btn-accent">Contact me!</a>
-    </section>
-    <section id="about" class="section-card">
-      <h2>About Me</h2>
-      <p>I enjoy learning how to build websites. This is my first HTML project!</p>
-      <ul class="about-list">
-        <li>I love coding (specifically vibe coding)</li>
-        <li>I enjoy gaming and reading (i play MMORPG Games a lot)</li>
-        <li>I'm interested in web design (building fully Dynamic Websites is challenging for me )</li>
-      </ul>
-    </section>
-    <section id="projects" class="section-card">
-      <h2>My Projects</h2>
-      <div class="project-cards">
-        <div class="project-card">
-          <h3>Simple Calculator</h3>
-          <p>A basic calculator app <span class="coming-soon">(now available!)</span></p>
-          <div class="project-status">
-            <a href="calculator.html" target="_blank" class="visit-link">Try Calculator</a>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="main-content">
+    
+    <!-- Hero Section -->
+    <section id="home" class="content-section hero-section">
+      <div class="hero-container">
+        <div class="hero-text-col">
+          <div class="hero-pill-tag">
+            <span class="tag-emoji">👋</span>
+            <span class="tag-text">Welcome to my developer space</span>
+          </div>
+          <h2 class="hero-greeting">Hi, I'm <span class="gradient-text">Junlie Pillazo</span></h2>
+          <h3 class="hero-subheading">Web Developer & BIT Computer Technology Enthusiast</h3>
+          <p class="hero-bio">
+            Passionate about crafting responsive web applications, building dynamic backend systems with PHP & MySQL, and exploring cutting-edge modern web technologies.
+          </p>
+          
+          <div class="hero-action-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>Explore GitHub Projects</span>
+            </a>
+            <a href="#certifications" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span>View Certifications</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics / Quick Highlights -->
+          <div class="hero-stats-row">
+            <div class="stat-card">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Active Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Mobile Responsive</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">BIT</span>
+              <span class="stat-label">Computer Tech Major</span>
+            </div>
           </div>
         </div>
-        <div class="project-card">
-          <h3>Blog Page</h3>
-          <p>A personal blog page layout</p>
-          <div class="project-status">
-            <span class="in-progress">Just Finished</span>
-            <br>
-            <a href="https://jackal605.github.io/Junlienp/" target="_blank" class="visit-link">Visit Blog Page</a>
+
+        <div class="hero-visual-col">
+          <div class="profile-card-wrapper">
+            <div class="profile-glow-ring"></div>
+            <div class="profile-image-frame">
+              <img src="profile.jpg" alt="Junlie Pillazo" class="profile-main-photo" />
+            </div>
+            <div class="floating-badge badge-top">
+              <span class="badge-icon">🚀</span>
+              <div class="badge-info">
+                <strong>Vibe Coding & Web Dev</strong>
+                <small>Modern Web Tech</small>
+              </div>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <span class="badge-icon">💻</span>
+              <div class="badge-info">
+                <strong>GitHub Active</strong>
+                <small>@Jackal605</small>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="project-card">
-          <h3>To-Do List</h3>
-          <p>My first interactive list <span class="coming-soon">(coming later with JavaScript)</span></p>
         </div>
       </div>
     </section>
-    <section id="contact" class="section-card">
-      <h2>Contact Me</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" />
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-        <button type="submit" class="btn-accent">Send</button>
-      </form>
+
+    <!-- About Me Section -->
+    <section id="about" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Background & Technical Expertise</h2>
+        <p class="section-desc">Get to know more about my journey in tech, my interests, and the stack I use to build applications.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-story-card">
+          <h3 class="card-title">
+            <span class="title-icon">💡</span> Who I Am
+          </h3>
+          <p>
+            I am a <strong>Bachelor in Industrial Technology (BIT) major in Computer Technology</strong> student with a deep passion for web development and software technology. 
+          </p>
+          <p>
+            My journey began with curiosity about how the web works and has grown into actively building full-stack web applications, interactive utilities, and dynamic database-driven platforms.
+          </p>
+          
+          <div class="interests-group">
+            <h4 class="subhead">What I Love:</h4>
+            <div class="pill-group">
+              <span class="interest-pill"><span class="pill-emoji">💻</span> Vibe Coding & Frontend UI</span>
+              <span class="interest-pill"><span class="pill-emoji">🎮</span> MMORPG Gaming & Tech Lore</span>
+              <span class="interest-pill"><span class="pill-emoji">📚</span> Continuous Learning & Reading</span>
+              <span class="interest-pill"><span class="pill-emoji">🌐</span> Building Dynamic Web Apps</span>
+              <span class="interest-pill"><span class="pill-emoji">⚡</span> Problem Solving</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card skills-card">
+          <h3 class="card-title">
+            <span class="title-icon">🛠️</span> Skills & Tech Stack
+          </h3>
+          <div class="skills-categories">
+            <div class="skill-category">
+              <h4 class="category-heading">Frontend Development</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><span class="tech-dot html"></span> HTML5 Semantic</span>
+                <span class="skill-tag"><span class="tech-dot css"></span> CSS3 & Modern Layouts</span>
+                <span class="skill-tag"><span class="tech-dot js"></span> JavaScript (ES6+)</span>
+                <span class="skill-tag"><span class="tech-dot responsive"></span> Responsive Design</span>
+                <span class="skill-tag"><span class="tech-dot ui"></span> UI/UX & Glassmorphism</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="category-heading">Backend & Database</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><span class="tech-dot php"></span> PHP Backend</span>
+                <span class="skill-tag"><span class="tech-dot sql"></span> MySQL Database</span>
+                <span class="skill-tag"><span class="tech-dot crud"></span> CRUD Operations</span>
+                <span class="skill-tag"><span class="tech-dot auth"></span> Session Authentication</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="category-heading">Tools & Workflow</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><span class="tech-dot git"></span> Git & GitHub</span>
+                <span class="skill-tag"><span class="tech-dot vscode"></span> VS Code</span>
+                <span class="skill-tag"><span class="tech-dot server"></span> Apache / XAMPP</span>
+                <span class="skill-tag"><span class="tech-dot hosting"></span> Web Hosting & Deployment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-      <p>&copy; 2025 Junlie Pillazo. All rights reserved.</p>
+
+    <!-- Certifications Section (Reserved for user to add later) -->
+    <section id="certifications" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Certifications & Achievements</h2>
+        <p class="section-desc">Official certificates, course completions, and technical credentials will be displayed here.</p>
+      </div>
+
+      <!-- Blank Placeholder Space for User's Certifications -->
+      <div class="glass-card cert-placeholder-card">
+        <div class="placeholder-icon-wrap">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+        </div>
+        <h3 class="placeholder-heading">Certifications Space Reserved</h3>
+        <p class="placeholder-text">
+          This area is ready for your certificates, licenses, and course credentials.
+        </p>
+        <span class="helper-badge">✦ To be added soon</span>
+
+        <!-- 
+        ========================================================================
+        CERTIFICATE TEMPLATE: Copy & paste this block inside here when ready!
+        ========================================================================
+        <div class="certifications-grid">
+          <article class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-wrapper web">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div class="cert-badge verified">Verified</div>
+            </div>
+            <h3 class="cert-title">Your Certificate Name Here</h3>
+            <p class="cert-issuer">Issued by: Organization / Institution</p>
+            <p class="cert-description">Brief summary of the skills and technologies covered.</p>
+            <div class="cert-footer">
+              <span class="cert-date">📅 Year</span>
+            </div>
+          </article>
+        </div>
+        ========================================================================
+        -->
+      </div>
+    </section>
+
+    <!-- Projects Section: GitHub Showcase -->
+    <section id="projects" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Portfolio Showcase</span>
+        <h2 class="section-title">Featured & GitHub Projects</h2>
+        <p class="section-desc">A selection of my web applications, backend systems, and source code repositories hosted on GitHub.</p>
+      </div>
+
+      <!-- GitHub Profile Highlight Banner -->
+      <div class="github-profile-banner glass-card">
+        <div class="gh-banner-left">
+          <div class="gh-icon-box">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div>
+            <h3 class="gh-banner-title">Jackal605 on GitHub</h3>
+            <p class="gh-banner-subtitle">Explore my open-source repositories, project commits, and experiments.</p>
+          </div>
+        </div>
+        <div class="gh-banner-right">
+          <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer" class="btn btn-gh">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>Visit @Jackal605</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Category Filters -->
+      <div class="filter-controls" id="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="featured">Featured</button>
+        <button class="filter-btn" data-filter="php">PHP & Full-Stack</button>
+        <button class="filter-btn" data-filter="frontend">JavaScript & Frontend</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid" id="projects-container">
+        
+        <!-- Project 1: Blog App -->
+        <article class="glass-card project-card" data-category="featured php">
+          <div class="project-top-row">
+            <div class="project-folder-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-badges">
+              <span class="status-tag live">🟢 Live App</span>
+              <span class="language-tag php"><span class="lang-dot php"></span> PHP</span>
+            </div>
+          </div>
+          
+          <h3 class="project-title">
+            <a href="https://github.com/Jackal605/blog_app" target="_blank" rel="noopener noreferrer">Blog App Platform</a>
+          </h3>
+          
+          <!-- Brief Introduction (as requested) -->
+          <div class="project-intro-box">
+            <p class="project-intro">
+              A dynamic personal blogging platform developed with <strong>PHP and MySQL</strong>. Features secure user authentication, multi-user article management, database-driven dynamic content rendering, and a responsive layout for mobile and desktop readers.
+            </p>
+          </div>
+
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Session Auth</span>
+            <span class="tag">Responsive UI</span>
+          </div>
+
+          <div class="project-links-row">
+            <a href="https://github.com/Jackal605/blog_app" target="_blank" rel="noopener noreferrer" class="link-btn code-btn" title="View source code on GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://pillazojunlie.lovestoblog.com/login.php" target="_blank" rel="noopener noreferrer" class="link-btn demo-btn" title="Visit Live Blog Site">
+              <span>Live Site</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: TCCGradePoint -->
+        <article class="glass-card project-card" data-category="featured php">
+          <div class="project-top-row">
+            <div class="project-folder-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-badges">
+              <span class="status-tag academic">🎓 Academic System</span>
+              <span class="language-tag php"><span class="lang-dot php"></span> PHP</span>
+            </div>
+          </div>
+          
+          <h3 class="project-title">
+            <a href="https://github.com/Jackal605/TCCGradePoint" target="_blank" rel="noopener noreferrer">TCC GradePoint Management</a>
+          </h3>
+          
+          <!-- Brief Introduction (as requested) -->
+          <div class="project-intro-box">
+            <p class="project-intro">
+              An automated grade computation and academic credit tracking web system tailored for collegiate evaluation. Implements weighted GPA calculation logic, student record indexing, and administrative grade entry workflows.
+            </p>
+          </div>
+
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">GPA Calculations</span>
+            <span class="tag">Data Validation</span>
+          </div>
+
+          <div class="project-links-row">
+            <a href="https://github.com/Jackal605/TCCGradePoint" target="_blank" rel="noopener noreferrer" class="link-btn code-btn" title="View source code on GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Repo</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Hardware & IT Asset Tracker -->
+        <article class="glass-card project-card" data-category="featured php">
+          <div class="project-top-row">
+            <div class="project-folder-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div class="project-badges">
+              <span class="status-tag live">🟢 Full-Stack System</span>
+              <span class="language-tag php"><span class="lang-dot php"></span> PHP</span>
+            </div>
+          </div>
+          
+          <h3 class="project-title">
+            <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer">Hardware & IT Asset Tracker</a>
+          </h3>
+          
+          <!-- Brief Introduction (as requested) -->
+          <div class="project-intro-box">
+            <p class="project-intro">
+              An asset inventory and hardware diagnostic management system developed for Computer Technology laboratories. Tracks device specifications, maintenance logs, peripheral allocation, and repair schedules with MySQL relational database integration.
+            </p>
+          </div>
+
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Asset Tracking</span>
+            <span class="tag">Hardware Diagnostics</span>
+          </div>
+
+          <div class="project-links-row">
+            <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer" class="link-btn code-btn" title="View repository on GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Profile</span>
+            </a>
+            <button class="link-btn demo-btn" onclick="openDemoToast('Hardware Asset Tracker repository documentation available on GitHub!')">
+              <span>View Details</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 4: Junlienp Portfolio Repository -->
+        <article class="glass-card project-card" data-category="frontend">
+          <div class="project-top-row">
+            <div class="project-folder-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-badges">
+              <span class="status-tag active">🚀 Main Portfolio</span>
+              <span class="language-tag html"><span class="lang-dot html"></span> HTML/CSS/JS</span>
+            </div>
+          </div>
+          
+          <h3 class="project-title">
+            <a href="https://github.com/Jackal605/Junlienp" target="_blank" rel="noopener noreferrer">Junlienp Web Portfolio</a>
+          </h3>
+          
+          <!-- Brief Introduction (as requested) -->
+          <div class="project-intro-box">
+            <p class="project-intro">
+              The official source repository for this portfolio platform. Engineered without heavy bloated frameworks using clean semantic HTML5, high-performance vanilla CSS, glassmorphism design tokens, and fluid mobile navigation.
+            </p>
+          </div>
+
+          <div class="project-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">Modern CSS3</span>
+            <span class="tag">Vanilla JS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+
+          <div class="project-links-row">
+            <a href="https://github.com/Jackal605/Junlienp" target="_blank" rel="noopener noreferrer" class="link-btn code-btn" title="View repository on GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="#home" class="link-btn demo-btn" title="View Current Site">
+              <span>Current Site</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: Interactive Smart Task Tracker -->
+        <article class="glass-card project-card" data-category="frontend">
+          <div class="project-top-row">
+            <div class="project-folder-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <div class="project-badges">
+              <span class="status-tag building">🛠️ Enhanced UI</span>
+              <span class="language-tag js"><span class="lang-dot js"></span> JavaScript</span>
+            </div>
+          </div>
+          
+          <h3 class="project-title">
+            <span>Smart Task & Productivity App</span>
+          </h3>
+          
+          <!-- Brief Introduction (as requested) -->
+          <div class="project-intro-box">
+            <p class="project-intro">
+              An interactive productivity application with browser <strong>LocalStorage persistence</strong>, priority sorting, categorization tags, and smooth micro-animations for tracking everyday tasks and coding goals.
+            </p>
+          </div>
+
+          <div class="project-tags">
+            <span class="tag">JavaScript ES6</span>
+            <span class="tag">LocalStorage</span>
+            <span class="tag">UX Animation</span>
+            <span class="tag">Productivity</span>
+          </div>
+
+          <div class="project-links-row">
+            <button class="link-btn demo-btn" onclick="openDemoToast('Interactive Task App preview is being linked to live GitHub repo!')">
+              <span>Interactive Preview</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc">Have a question, collaboration idea, or project opportunity? Send me a message below!</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <div class="glass-card contact-card">
+            <h3 class="card-title">
+              <span class="title-icon">📬</span> Contact Details
+            </h3>
+            <p class="contact-intro">
+              Feel free to reach out via direct message or connect with me through my developer profiles.
+            </p>
+
+            <div class="contact-items-list">
+              <div class="contact-item">
+                <div class="item-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="item-details">
+                  <span class="item-label">Email</span>
+                  <div class="copy-email-group">
+                    <span class="item-value" id="user-email-text">junliepillazo@gmail.com</span>
+                    <button class="btn-copy-email" id="copy-email-btn" title="Copy email address" aria-label="Copy email">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                      <span id="copy-status-text">Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="item-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div class="item-details">
+                  <span class="item-label">GitHub</span>
+                  <a href="https://github.com/Jackal605" target="_blank" rel="noopener noreferrer" class="item-link">github.com/Jackal605</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="item-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div class="item-details">
+                  <span class="item-label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/jundev5672" target="_blank" rel="noopener noreferrer" class="item-link">linkedin.com/in/jundev5672</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="item-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="item-details">
+                  <span class="item-label">Location & Status</span>
+                  <span class="item-value">Philippines • Available for Opportunities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-col">
+          <div class="glass-card form-card">
+            <h3 class="card-title">
+              <span class="title-icon">✉️</span> Send a Message
+            </h3>
+            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <div class="input-wrapper">
+                  <input type="text" id="form-name" name="name" placeholder="e.g. Alex Santos" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Your Email Address</label>
+                <div class="input-wrapper">
+                  <input type="email" id="form-email" name="email" placeholder="name@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <div class="input-wrapper">
+                  <input type="text" id="form-subject" name="subject" placeholder="Project Inquiry / Collaboration" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <div class="input-wrapper">
+                  <textarea id="form-message" name="message" rows="4" placeholder="Hello Junlie, I saw your portfolio and would like to talk about..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <p class="footer-copy">&copy; 2026 Junlie Pillazo. Built with passion & modern vanilla CSS.</p>
+        </div>
+        <div class="footer-right">
+          <a href="#home" class="btn-back-to-top" aria-label="Back to top">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </div>
     </footer>
   </main>
+
+
+
+  <!-- Toast Notification element -->
+  <div class="toast-notification" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Modern Interactive JavaScript -->
+  <script>
+    // --- Mobile Menu Toggle and Smooth Navigation ---
+    const hamburgerBtn = document.getElementById('hamburger-toggle');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const drawerCloseBtn = document.getElementById('drawer-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-menu-drawer .nav-link');
+    const desktopNavLinks = document.querySelectorAll('.sidebar-nav .nav-item');
+
+    function openMobileMenu() {
+      hamburgerBtn.classList.add('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      mobileDrawer.classList.add('open');
+      menuBackdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      mobileDrawer.classList.remove('open');
+      menuBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.contains('open');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    menuBackdrop.addEventListener('click', closeMobileMenu);
+
+    window.closeMobileMenu = closeMobileMenu;
+    window.openMobileMenu = openMobileMenu;
+
+    // Close mobile drawer when clicking any link inside the drawer
+    document.querySelectorAll('#mobile-menu-drawer a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
+    // --- Active Navigation Spy on Scroll ---
+    const sections = document.querySelectorAll('.content-section');
+    function updateActiveNav() {
+      const scrollY = window.pageYOffset;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          desktopNavLinks.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-section') === sectionId) {
+              item.classList.add('active');
+            }
+          });
+          mobileNavLinks.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${sectionId}`) {
+              item.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+
+
+    // --- Category Filter Tabs for Projects ---
+    const projectFilterBtns = document.querySelectorAll('#project-filters .filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        projectFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category.includes(filter)) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeInUp 0.3s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // --- Toast Notification Helper ---
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    function openDemoToast(msg) {
+      showToast(msg);
+    }
+
+    // --- Copy Email to Clipboard ---
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const userEmailText = document.getElementById('user-email-text');
+    const copyStatusText = document.getElementById('copy-status-text');
+
+    if (copyEmailBtn && userEmailText) {
+      copyEmailBtn.addEventListener('click', async () => {
+        const email = userEmailText.textContent.trim();
+        try {
+          await navigator.clipboard.writeText(email);
+          copyStatusText.textContent = 'Copied!';
+          copyEmailBtn.classList.add('copied');
+          showToast(`📋 Copied ${email} to clipboard!`);
+          setTimeout(() => {
+            copyStatusText.textContent = 'Copy';
+            copyEmailBtn.classList.remove('copied');
+          }, 2500);
+        } catch (err) {
+          showToast(`Direct email: ${email}`);
+        }
+      });
+    }
+
+    // --- Contact Form Submission Handler ---
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const subject = document.getElementById('form-subject').value;
+      const message = document.getElementById('form-message').value;
+
+      showToast(`✨ Thanks ${name}! Opening mail client with your message...`);
+
+      // Prepare mailto fallback
+      const mailtoUrl = `mailto:junliepillazo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
+      
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+        form.reset();
+      }, 1000);
+    }
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
+
 </html>
-
-
